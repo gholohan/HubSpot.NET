@@ -13,6 +13,8 @@
     using HubSpot.NET.Api.Properties;
     using HubSpot.NET.Api.Timeline;
     using HubSpot.NET.Core.Interfaces;
+    using HubSpot.NET.Api.Products;
+
 
     /// <summary>
     /// Starting point for using HubSpot.NET
@@ -31,6 +33,7 @@
         public IHubSpotEmailEventsApi EmailEvents { get; private set; }
         public IHubSpotEmailSubscriptionsApi EmailSubscriptions { get; private set; }
         public IHubSpotTimelineApi Timelines { get; private set; }
+        public IHubSpotProductApi Product { get; private set; }
 
 
         /// <summary>
@@ -72,7 +75,7 @@
             CompanyProperties = new HubSpotCompaniesPropertiesApi(client);
             EmailSubscriptions = new HubSpotEmailSubscriptionsApi(client);
             Timelines = new HubSpotTimelineApi(client);
-
+            Product = new HubspotProductApi(client);
         }
     }
 }
